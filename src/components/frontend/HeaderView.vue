@@ -5,9 +5,9 @@
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="index.html">
+          <router-link class="nav-link" :to="{name: 'home'}">
               <img src="frontend/img//logo.png" alt />
-            </a>
+          </router-link>
             <button
               class="navbar-toggler"
               type="button"
@@ -26,18 +26,18 @@
               class="collapse navbar-collapse offset"
               id="navbarSupportedContent"
             >
-              <ul class="nav navbar-nav menu_nav justify-content-end">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home</a>
+              <ul class="nav navbar-nav menu_nav justify-content-end" id="menu">
+                <li class="nav-item ">
+                  <router-link class="nav-link" :to="{name: 'home'}">Home</router-link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html">About</a>
+                  <router-link :to="{name:'AboutView'}" class="nav-link" >About</router-link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="services.html">Services</a>
+                  <router-link :to="{name: 'ServiceView'}" class="nav-link">Services</router-link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="portfolio.html">Portfolio</a>
+                  <router-link :to="{name: 'Protfolio'}" class="nav-link">Portfolio</router-link>
                 </li>
                 <li class="nav-item submenu dropdown">
                   <a
@@ -54,8 +54,8 @@
                       <a class="nav-link" href="elements.html">Elements</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="portfolio-details.html"
-                        >Portfolio Details</a
+                      <router-link :to="{name:'ProfilesDetails'}" class="nav-link"
+                        >Portfolio Details</router-link
                       >
                     </li>
                   </ul>
@@ -72,7 +72,7 @@
                   >
                   <ul class="dropdown-menu">
                     <li class="nav-item">
-                      <a class="nav-link" href="blog.html">Blog</a>
+                      <router-link :to="{name:'Blog'}" class="nav-link" >Blog</router-link>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="single-blog.html"
@@ -82,7 +82,7 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact</a>
+                  <router-link :to="{name:'Contact'}" class="nav-link" >Contact</router-link>
                 </li>
               </ul>
             </div>
@@ -92,7 +92,15 @@
     </header>
   </div>
 </template>
+
 <script>
-export default {};
+export default {
+
+};
 </script>
-<style lang=""></style>
+
+<style>
+ #menu .router-link-exact-active{
+   color: #4458dc;
+ }
+</style>
